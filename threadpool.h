@@ -74,14 +74,9 @@ protected:
                 mQueue.pop();
                 lock.unlock();
 
-                Execute(job);
+                job();
             }
         }
-    }
-
-    void Execute(std::function<void()> job)
-    {
-        job();
     }
 
 private:
